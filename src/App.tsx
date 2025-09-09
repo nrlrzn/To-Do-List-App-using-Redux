@@ -5,11 +5,11 @@ import './styles/global.scss';
 
 export default function App() {
   return (
-    <div>
+    <div className="todo-container">
       <h1 className="todo-title">To-Do List using Zustand</h1>
       <TodoInput />
-      <TodoList />
       <TodoFilters />
+      <TodoList />
     </div>
   );
 }

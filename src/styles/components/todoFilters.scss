@@ -26,7 +26,7 @@
   }
 }
 
-// Tablets
+// Tablet
 @media screen and (max-width: 768px) {
   .todo-filters {
     gap: 6px;
@@ -43,14 +43,17 @@
 // Mobile
 @media screen and (max-width: 480px) {
   .todo-filters {
-    flex-direction: column;
-    gap: 8px;
+    flex-direction: grid;
     margin-top: 0.5rem;
+    justify-content: space-between;
 
     Button {
-      width: 100%;
-      font-size: 0.9rem;
+      width: 23%;
+      font-size: 0.8rem;
       padding: 0.6rem 0.8rem;
+    }
+    Button.clear {
+      font-size: 0.6rem;
     }
   }
 }

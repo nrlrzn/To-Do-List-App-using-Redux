@@ -11,12 +11,9 @@
     padding: 0.5rem;
     border-radius: $border-radius;
     border: none;
-    outline: none;
   }
 
   Button {
-    background: 'transparent';
-    border: 'none';
     cursor: 'pointer';
     @include button-style($primary-color);
     height: 40px;
