@@ -1,0 +1,56 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.todo-filters {
+  display: flex;
+  gap: 10px;
+  margin-top: 1rem;
+
+  Button {
+    @include button-style(#333);
+    height: 40px;
+
+    &:hover {
+      background-color: $hover !important;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    &.active,
+    &.clear {
+      background-color: $primary-color !important;
+
+      &:hover {
+        background-color: $hover !important;
+      }
+    }
+  }
+}
+
+// Tablets
+@media screen and (max-width: 768px) {
+  .todo-filters {
+    gap: 6px;
+    margin-top: 0.7rem;
+    flex-wrap: wrap;
+
+    Button {
+      font-size: 0.95rem;
+      padding: 0.5rem 1rem;
+    }
+  }
+}
+
+// Mobile
+@media screen and (max-width: 480px) {
+  .todo-filters {
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 0.5rem;
+
+    Button {
+      width: 100%;
+      font-size: 0.9rem;
+      padding: 0.6rem 0.8rem;
+    }
+  }
+}

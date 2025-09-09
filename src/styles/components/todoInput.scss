@@ -1,0 +1,30 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.todo-input {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 1rem;
+
+  input {
+    flex: 1;
+    padding: 0.5rem;
+    border-radius: $border-radius;
+    border: none;
+    outline: none;
+  }
+
+  Button {
+    background: 'transparent';
+    border: 'none';
+    cursor: 'pointer';
+    @include button-style($primary-color);
+    height: 40px;
+
+    &:hover {
+      background-color: $hover !important;
+      color: #fff;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+  }
+}
