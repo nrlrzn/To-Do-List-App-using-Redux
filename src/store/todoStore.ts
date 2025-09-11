@@ -10,6 +10,7 @@ interface TodoState {
   deleteTodo: (id: number) => void;
   clearCompleted: () => void;
   setFilter: (filter: FilterType) => void;
+  editTodo: (id: number, newTitle: string) => void; // ✅ added
 }
 
 export const useTodoStore = create<TodoState>((set) => ({
@@ -34,4 +35,10 @@ export const useTodoStore = create<TodoState>((set) => ({
       todos: state.todos.filter((todo) => !todo.completed),
     })),
   setFilter: (filter) => set(() => ({ filter })),
+  editTodo: (id, newTitle) =>
+    set((state) => ({
+      todos: state.todos.map((todo) =>
+        todo.id === id ? { ...todo, title: newTitle } : todo
+      ),
+    })),
 }));
